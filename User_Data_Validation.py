@@ -12,16 +12,12 @@ def last2(s):
     return s[-2:]
 
 def createPassword():
-    print("Enter a password of your choice")
-    while True:
-        ps = input()
-        if len(ps) < 7:
-            print("Password must be greater than or equal to 7 character")
-            createPassword()
-        else:
-            return ps
-        break
-    
+    enterpassword = input("Enter a password of your choice :")
+    while len(enterpassword) < 7:
+        print("Password must be greater than or equal to 7 character")
+        enterpassword = input("Enter a password of your choice :")
+    return enterpassword
+        
 def choices():
     choice = input().capitalize()
     return choice
@@ -56,7 +52,6 @@ def users():
 
 while True:
     users()
-    #print(myDetails)
     for i in range(0, len(myDetails), 4):
             print('First Name:',myDetails[i], 'Last Name:',myDetails[i+1], 'Email:',myDetails[i+2], 'Password:',myDetails[i+3])
     print('Press Y to continue and N to End')
